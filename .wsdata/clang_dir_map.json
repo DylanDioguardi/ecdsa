@@ -1,0 +1,8 @@
+{
+  "workspaceRoot": "C:\\Xilinx_files\\ECDSA",
+  "mapping": {
+    "ecdsa\\test.cpp": "ecdsa",
+    "ecdsa\\ecdsa.h": "ecdsa",
+    "ecdsa\\ecdsa.cpp": "ecdsa"
+  }
+}
