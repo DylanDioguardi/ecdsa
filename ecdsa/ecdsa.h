@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <utility>
 
-#define BIT_NUM 1024
+#define BIT_NUM 64
 typedef ap_uint<BIT_NUM> ap_uint_t;
 extern const ap_uint_t p;
 extern const ap_uint_t A;

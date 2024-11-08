@@ -79,7 +79,7 @@ int main(void){
 	// r3=rand()%18;
 	r1=5;
     r2=11;
-    r3=13;
+    r3=15;
     std::cout << "r1=" << r1 << ", r2=" << r2 << ", r3=" << r3 << std::endl;
 
 	x1=X[r1];
@@ -122,9 +122,17 @@ int main(void){
 	// y5=point_addy(x1,y1,x5,y5);
 	// printf("P5=(%d, %d)\n",x5_1,y5);
 
-    Point nP;
-    nP = point_mult(P1, 6);
-    std::cout << "nP=(" << nP.x << ", " << nP.y << ")" << std::endl;
+    Point P_6, P_9, P_6_9, P_9_6;
+    P_6 = point_mult(P1, 5);
+    P_9 = point_mult(P1, 9);
 
+
+    P_6_9 = point_mult(P_6, 9);
+    P_9_6 = point_mult(P_9, 6);
+    std::cout << "P_6_8=(" << P_6_9.x << ", " << P_6_9.y << ")" << std::endl;
+    std::cout << "P_9_6=(" << P_9_6.x << ", " << P_9_6.y << ")" << std::endl;
+
+    std::cout << "P_6=(" << P_6.x << ", " << P_6.y << ")" << std::endl;
+    std::cout << "P_9=(" << P_9.x << ", " << P_9.y << ")" << std::endl;
 	return 0;
 }

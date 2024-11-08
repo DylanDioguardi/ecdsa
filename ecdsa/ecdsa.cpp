@@ -2,7 +2,7 @@
 #include <cctype>
 #include <iostream>
 
-const ap_uint_t p = 17;
+const ap_uint_t p = 3821;
 const ap_uint_t A = 15;
 
 static ap_uint_t modp(const ap_uint_t &a){
@@ -84,7 +84,7 @@ Point point_dbl(const Point& P1){
 
 Point point_mult(const Point &P, const ap_uint_t &n){
     Point R = P;
-    int t=5-1;
+    int t= BIT_NUM -1;
     if(n == 0){
         printf("n was 0");
         return Point {0,0};
