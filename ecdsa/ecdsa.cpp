@@ -55,7 +55,21 @@ static ap_uint_t gyaku(const ap_uint_t &a) {
     }
     
     // Return appropriate result based on which value reached 1
-    return (u == 1) ? (r >= p ? r - p : r) : (s >= p ? s - p : s);
+    ap_uint_t result;
+    if (u == 1) {
+        if (r >= p) {
+            result = r - p;
+        } else {
+            result = r;
+        }
+    } else {
+        if (s >= p) {
+            result = s - p;
+        } else {
+            result = s;
+        }
+    }
+    return result;
 }
 
 static ap_uint_t gyaku_old(const ap_uint_t &a){
