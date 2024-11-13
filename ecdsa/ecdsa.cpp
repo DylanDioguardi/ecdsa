@@ -9,7 +9,56 @@ static ap_uint_t modp(const ap_uint_t &a){
     return a%p;
 }
 
-static ap_uint_t gyaku(const ap_uint_t &a){
+static ap_uint_t gyaku(const ap_uint_t &a) {
+    #pragma HLS PIPELINE II=1
+    
+    ap_uint_t u = p;    // p is assumed to be a global constant prime
+    ap_uint_t v = a;
+    ap_uint_t r = 0;
+    ap_uint_t s = 1;
+    
+    while (u != 1 && v != 1) {
+        #pragma HLS LOOP_TRIPCOUNT min=1 max=BIT_NUM
+        
+        // Process trailing zeros for u and update r
+        while ((u & 1) == 0) {
+            #pragma HLS LOOP_TRIPCOUNT min=1 max=BIT_NUM
+            u >>= 1;
+            if ((r & 1) == 0) {
+                r >>= 1;
+            } else {
+                r = (r + p) >> 1;
+            }
+        }
+        
+        // Process trailing zeros for v and update s
+        while ((v & 1) == 0) {
+            #pragma HLS LOOP_TRIPCOUNT min=1 max=BIT_NUM
+            v >>= 1;
+            if ((s & 1) == 0) {
+                s >>= 1;
+            } else {
+                s = (s + p) >> 1;
+            }
+        }
+        
+        // Subtract smaller from larger
+        if (u >= v) {
+            u -= v;
+            r -= s;
+            if (r >= p) r -= p;  // Keep r in range
+        } else {
+            v -= u;
+            s -= r;
+            if (s >= p) s -= p;  // Keep s in range
+        }
+    }
+    
+    // Return appropriate result based on which value reached 1
+    return (u == 1) ? (r >= p ? r - p : r) : (s >= p ? s - p : s);
+}
+
+static ap_uint_t gyaku_old(const ap_uint_t &a){
     ap_uint_t b = 1;
     for(ap_uint_t i=1; i < p - 1; i++){
         b = b * a;

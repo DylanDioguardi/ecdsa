@@ -17,6 +17,7 @@ struct Point {
 
 static ap_uint_t modp(const ap_uint_t& a);
 static ap_uint_t gyaku(const ap_uint_t& a);
+static ap_uint_t gyaku_old(const ap_uint_t& a);
 
 bool check_point(const Point& P1, const Point& P2);
 Point point_add(const Point& P1, const Point& P2);
