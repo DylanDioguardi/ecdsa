@@ -5,8 +5,9 @@
 #include <cstdint>
 #include <utility>
 
-#define BIT_NUM 64
+#define BIT_NUM 1024
 typedef ap_uint<BIT_NUM> ap_uint_t;
+
 extern const ap_uint_t p;
 extern const ap_uint_t A;
 
@@ -16,8 +17,10 @@ struct Point {
 };
 
 static ap_uint_t modp(const ap_uint_t& a);
-static ap_uint_t gyaku(const ap_uint_t& a);
-static ap_uint_t gyaku_old(const ap_uint_t& a);
+
+ap_uint<9> countTrailingZeros(ap_uint<BIT_NUM> &x) ;
+ap_uint_t gyaku(const ap_uint_t& a);
+ap_uint_t gyaku_old(const ap_uint_t& a);
 
 bool check_point(const Point& P1, const Point& P2);
 Point point_add(const Point& P1, const Point& P2);

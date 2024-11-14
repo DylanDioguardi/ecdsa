@@ -123,9 +123,14 @@ int main(void){
 	// printf("P5=(%d, %d)\n",x5_1,y5);
 
     Point P_6, P_9, P_6_9, P_9_6;
-    P_6 = point_mult(P1, 5);
+    P_6 = point_mult(P1, 6);
     P_9 = point_mult(P1, 9);
 
+    ap_uint_t g, g0;
+    g =  gyaku(15);
+    //g0 =  gyaku_old(15);    
+    std::cout << "gyaku=(" << g << ")" << std::endl;
+    //std::cout << "gyaku_old=(" << g0 << ")" << std::endl; 
 
     P_6_9 = point_mult(P_6, 9);
     P_9_6 = point_mult(P_9, 6);
