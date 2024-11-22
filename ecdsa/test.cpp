@@ -128,13 +128,15 @@ int main(void){
 
     ap_uint_t g, g0;
     g =  gyaku(15);
-    //g0 =  gyaku_old(15);    
+    g =  gyaku(16);
+    // g0 =  gyaku_old(15);    
     std::cout << "gyaku=(" << g << ")" << std::endl;
-    //std::cout << "gyaku_old=(" << g0 << ")" << std::endl; 
+    // std::cout << "gyaku_old=(" << g0 << ")" << std::endl; 
 
     P_6_9 = point_mult(P_6, 9);
     P_9_6 = point_mult(P_9, 6);
-    std::cout << "P_6_8=(" << P_6_9.x << ", " << P_6_9.y << ")" << std::endl;
+
+    std::cout << "P_6_9=(" << P_6_9.x << ", " << P_6_9.y << ")" << std::endl;
     std::cout << "P_9_6=(" << P_9_6.x << ", " << P_9_6.y << ")" << std::endl;
 
     std::cout << "P_6=(" << P_6.x << ", " << P_6.y << ")" << std::endl;

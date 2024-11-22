@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "C:/test\\ecdsa\\vadd_kernel\\krnl_vadd\\krnl_vadd.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "11/22/24 16:12:54",
+ "timestampMillis": "1387753833",
+ "buildStep": {
+  "cmdId": "f133e42e-9276-4250-8e61-cd31bd2ef8c4",
+  "name": "vitis-run",
+  "logFile": "C:/test\\ecdsa\\vadd_kernel\\krnl_vadd\\logs\\krnl_vadd.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.1/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\test\\ecdsa\\vadd_kernel\\hls_config.cfg --work_dir krnl_vadd ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\test\\ecdsa\\vadd_kernel\\hls_config.cfg",
+   "--work_dir",
+   "krnl_vadd"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\test\\ecdsa\\vadd_kernel"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "11/22/24 16:12:54",
+ "timestampMillis": "1387753834",
+ "status": {
+  "cmdId": "f133e42e-9276-4250-8e61-cd31bd2ef8c4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "11/22/24 16:13:05",
+ "timestampMillis": "1387765534",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "krnl_vadd",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/test\\ecdsa\\vadd_kernel\\krnl_vadd.cpp",
+     "C:/test\\ecdsa\\vadd_kernel\\krnl_vadd.hpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "11/22/24 16:13:05",
+ "timestampMillis": "1387765539",
+ "buildStep": {
+  "cmdId": "f25c6152-1d8d-4d39-8e49-d156ef43c6dd",
+  "name": "csim_design",
+  "logFile": "C:/test\\ecdsa\\vadd_kernel\\krnl_vadd\\hls\\hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\test\\ecdsa\\vadd_kernel"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "11/22/24 16:13:05",
+ "timestampMillis": "1387765541",
+ "status": {
+  "cmdId": "f25c6152-1d8d-4d39-8e49-d156ef43c6dd",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "11/22/24 16:13:19",
+ "timestampMillis": "1387779095",
+ "status": {
+  "cmdId": "f25c6152-1d8d-4d39-8e49-d156ef43c6dd",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "11/22/24 16:13:19",
+ "timestampMillis": "1387779338",
+ "status": {
+  "cmdId": "f133e42e-9276-4250-8e61-cd31bd2ef8c4",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "11/22/24 16:13:19",
+ "timestampMillis": "1387779339",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "11/22/24 16:13:19",
+ "timestampMillis": "1387779340",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

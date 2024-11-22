@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "C:\\test\\ecdsa\\vadd_kernel",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:\\test\\ecdsa\\vadd_kernel\\krnl_vadd.cpp"
+    ],
+    "file": "C:\\test\\ecdsa\\vadd_kernel\\krnl_vadd.cpp"
+  },
+  {
+    "directory": "C:\\test\\ecdsa\\vadd_kernel",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\include",
+      "",
+      "-c",
+      "C:\\test\\ecdsa\\vadd_kernel\\krnl_vadd_test.cpp"
+    ],
+    "file": "C:\\test\\ecdsa\\vadd_kernel\\krnl_vadd_test.cpp"
+  }
+]

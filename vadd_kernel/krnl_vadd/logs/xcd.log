@@ -1,0 +1,25 @@
+11/22/24 16:12:53: Running xcd server. This server was NOT built by gradle, but presumably rdi.
+11/22/24 16:12:53: Server was asked to start on port: '52520'
+11/22/24 16:12:53: Server is using token UUID: 'c6170fa2-0590-463f-baec-a01dfab26f3b'
+11/22/24 16:12:53: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+11/22/24 16:12:53: Attempting to start server on port '52520'
+11/22/24 16:12:53: Running Dispatch Server
+11/22/24 16:12:53: Version 2.2.0
+11/22/24 16:12:54: Dispatch Server: Accepted socket connection from client
+11/22/24 16:12:54: Starting Socket connection
+11/22/24 16:12:54: EXCHANGE_TOKEN received, server token: c6170fa2-0590-463f-baec-a01dfab26f3b, passed token: c6170fa2-0590-463f-baec-a01dfab26f3b
+11/22/24 16:12:54: DISPATCH_HANDLER: Adding handler from function makeHandler in library librdi_system_diagram failed with exception: Could not dynamically load librdi_system_diagram.dll
+11/22/24 16:12:54: SESSION_MGR: creating session with session uuid: 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' and name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:12:54: KERNEL_SVC: creating session with uuid: 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' and name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:12:54: GUIDANCE_SMGR: creating guidance session with uuid: 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' and name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:13:05: Dispatch Server: Accepted socket connection from client
+11/22/24 16:13:05: Starting Socket connection
+11/22/24 16:13:19: SESSION_MGR: closing session for UUID 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' with name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:13:19: KERNEL_SVC: closing session for UUID 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' with name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:13:19: GUIDANCE_SMGR: closing session for UUID 'ab98fa07-be79-4d7f-a46f-d00dd9736d8c' with name 'vitis-run_compile_krnl_vadd'
+11/22/24 16:13:19: STOP_SERVER received, server token: c6170fa2-0590-463f-baec-a01dfab26f3b, passed token: c6170fa2-0590-463f-baec-a01dfab26f3b
+11/22/24 16:13:19: Socket received request to stop server.
+11/22/24 16:13:19: Dispatch Server: do_await_stop
+11/22/24 16:13:19: SERVER: destructor for server bound to port 52520
+11/22/24 16:13:19: Server exiting with status 0.
+11/22/24 16:13:19: Closing log file.

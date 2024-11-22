@@ -50,23 +50,23 @@ BINARY_GCD_LOOP:
   return (u == 1) ? x1 : x2;
 }
 
-ap_uint_t gyaku_old(const ap_uint_t &a) {
-  ap_uint_t b = 1;
-  for (ap_uint_t i = 1; i < p - 1; i++) {
-    b = b * a;
-    b = modp(b);
-  }
-  return b;
-  // #pragma HLS PIPELINE II=1
-  // ap_uint_t x = 1;
-  // ap_uint_t result = 0;
+// ap_uint_t gyaku_old(const ap_uint_t &a) {
+//   ap_uint_t b = 1;
+//   for (ap_uint_t i = 1; i < p - 1; i++) {
+//     b = b * a;
+//     b = modp(b);
+//   }
+//   return b;
+//   // #pragma HLS PIPELINE II=1
+//   // ap_uint_t x = 1;
+//   // ap_uint_t result = 0;
 
-  // for (x = 1; x < p; x++) {
-  //     ap_uint_t prod = modp(a * x);
-  //     result = (prod == 1) ? x : result;
-  // }
-  // return result;
-}
+//   // for (x = 1; x < p; x++) {
+//   //     ap_uint_t prod = modp(a * x);
+//   //     result = (prod == 1) ? x : result;
+//   // }
+//   // return result;
+// }
 
 bool check_point(const Point &P1, const Point &P2) {
   if (P1.x == P2.x && P1.y == P2.y) {
@@ -144,18 +144,24 @@ Point point_mult(const Point &P, const ap_uint_t &n) {
   return R;
 }
 
-void ecdsa(Point P1, Point P2, bool is_add, Point &result) {
-#pragma HLS INTERFACE s_axilite port = P1
-#pragma HLS INTERFACE s_axilite port = P2
-#pragma HLS INTERFACE s_axilite port = is_add
-#pragma HLS INTERFACE s_axilite port = result
-#pragma HLS INTERFACE s_axilite port = return
+void ecdsa(volatile EcdsaData* input, volatile EcdsaData* output) {
+#pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi port=output offset=slave bundle=gmem1
+#pragma HLS INTERFACE s_axilite port=input bundle=control
+#pragma HLS INTERFACE s_axilite port=output bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=control
 
-  if (is_add) {
-    // Point addition
-    result = point_add(P1, P2);
-  } else {
-    // Point doubling (when P1 = P2)
-    result = point_dbl(P1);
-  }
+    // Read input data
+    Point P1_in;
+    P1_in.x = input->x;
+    P1_in.y = input->y;
+    ap_uint_t scalar = input->scalar;
+    
+    // Perform point multiplication
+    Point result = point_mult(P1_in, scalar);
+    
+    // Write output data
+    output->x = result.x;
+    output->y = result.y;
 }
+

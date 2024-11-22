@@ -1,0 +1,11 @@
+{
+  "name": "vadd_kernel",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "krnl_vadd"
+  }
+}
